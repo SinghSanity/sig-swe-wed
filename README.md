@@ -1,5 +1,6 @@
 # sig-swe-wed
+How to Run:
 
-Hi, This is a test.
-
-Test 2
+- Make a virtual environment
+- Do `.\VIRTUAL_ENV_NAME\Scripts\activate.bat` run the virtual environment
+- Do `python app.py` to run the app
