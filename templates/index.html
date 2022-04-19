@@ -1,39 +1,43 @@
 <!DOCTYPE html> 
 <html>
 
-<title>Page Title</title>
+<title>Music Discovery App</title>
 
 <head>
-    <link rel="stylesheet" href={{ url_for( 'static', filename='style.css' ) }} />
+    <link rel="stylesheet" href={{ url_for( 'static', filename='styles.css' ) }} />
 </head>
 
 <body>
-    <div>
-    <h2>{{song_name}}</h2>
-    <h2>
-        {% for i in range(total_artists) %}
-            {% if i == total_artists-1 %}
-                {{ artist_names[i] }}
+    <div class="container">
+        <h2 class="info">{{song_name}}</h2>
+        <h2 class="info">
+            By:
+            {% for i in range(total_artists) %}
+                {% if i == total_artists-1 %}
+                    {{ artist_names[i] }}
+                {% else %}
+                    {{ artist_names[i] }} |
+                {% endif %}
+            {% endfor %}
+        </h2>
+
+        <div class="info">
+            <img src={{album_image}} width="400px"></img>
+        </div>
+        <br><br>
+        <div class="info">
+            {% if song_preview == None %}
+                <h3>No Song Preview</h3>
             {% else %}
-                {{ artist_names[i] }} |
+                <audio controls>
+                    <source src={{song_preview}} type="audio/mp3">
+                </audio>
             {% endif %}
-        {% endfor %}
-    </h2>
+        </div>
+
+        <h2 class="info"><a class="new_link"href={{spotify_link}} target="_blank">Play me on Spotify!</a></h2>
     </div>
-<img src={{album_image}} width="400px"></img>
 
-
-<div>
-{% if song_preview == None %}
-    <h2>No Song Preview</h2>
-{% else %}
-    <audio controls>
-        <source src={{song_preview}} type="audio/mpeg">
-    </audio>
-{% endif %}
-</div>
-
-<a href = {{spotify_link}}><h2>Play me on Spotify!</h2></a>
 </body>
 
 </html>

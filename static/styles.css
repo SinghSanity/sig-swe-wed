@@ -1,0 +1,20 @@
+body{
+    background-color: #ffe8e8;
+}
+
+.container{
+    font-family: 'Courier New', monospace;
+    margin: 0 auto;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+}
+
+.new_link{
+    color: black; 
+}
+a.new_link:hover{
+    color: grey;
+}
