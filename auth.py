@@ -1,3 +1,4 @@
+'''This file gets the Authorization token from the Spotify API.'''
 import os
 import requests
 from dotenv import load_dotenv, find_dotenv
@@ -10,7 +11,7 @@ CLIENT_ID = os.getenv('CLIENT_ID')
 CLIENT_SECRET =  os.getenv('CLIENT_SECRET')
 
 def get_auth():
-
+    '''This function gets the Authorization token from the Spotify API.'''
     auth_response = requests.post(AUTH_URL, {
         'grant_type': 'client_credentials',
         'client_id': CLIENT_ID,
@@ -23,6 +24,6 @@ def get_auth():
 
 
 if __name__ == '__main__':
-    token = get_auth()
-    print(token)
+    t = get_auth()
+    print(t)
    
